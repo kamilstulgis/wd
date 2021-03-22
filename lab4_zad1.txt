@@ -1,0 +1,5 @@
+[4, 8, 12, 16, 20, 24, 28, 32]ekonomia, 2, rach-fin
+ekonomia, 2, rach-fin
+andrzej
+nowak
+123123123
