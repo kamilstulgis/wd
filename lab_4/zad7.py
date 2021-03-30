@@ -16,28 +16,28 @@ class Robot:
 
     def idz_w_gore(self,ile_krokow):
         if ile_krokow > 0:
-            self.y += ile_krokow
+            self.y += ile_krokow * self.krok
             return (f'Poruszyłeś się o {ile_krokow} kroków w górę')
         else:
             return 'Podałeś błędne dane'
 
     def idz_w_dol(self,ile_krokow):
         if ile_krokow > 0:
-            self.y -= ile_krokow
+            self.y -= ile_krokow * self.krok
             return (f'Poruszyłeś się o {ile_krokow} kroków w dół')
         else:
             return 'Podałeś błędne dane'
 
     def idz_w_lewo(self,ile_krokow):
         if ile_krokow > 0:
-            self.x -= ile_krokow
+            self.x -= ile_krokow * self.krok
             return (f'Poruszyłeś się o {ile_krokow} kroków w lewo')
         else:
             return 'Podałeś błędne dane'
 
     def idz_w_prawo(self, ile_krokow):
         if ile_krokow > 0:
-            self.x += ile_krokow
+            self.x += ile_krokow * self.krok
             return (f'Poruszyłeś się o {ile_krokow} kroków w prawo')
         else:
             return 'Podałeś błędne dane'
@@ -49,11 +49,10 @@ class Robot:
         print('Instancja obiektu została zniszczona')
 
 
-alex = Robot(0,0)
+alex = Robot(0,0,2)
 print(alex.pokaz_gdzie_jestes())
-print(alex.idz_w_gore(5))
-print(alex.idz_w_dol(10))
+print(alex.idz_w_gore(4))
+print(alex.idz_w_prawo(4))
 print(alex.idz_w_lewo(4))
-print(alex.idz_w_prawo(10))
 print(alex.pokaz_gdzie_jestes())
 del alex
