@@ -44,7 +44,7 @@ class Robot:
 
     def pokaz_gdzie_jestes(self):
         return (f'Twoje aktualne współrzędne to ({self.x},{self.y})')
-
+# zad 8
     def __del__(self):
         print('Instancja obiektu została zniszczona')
 
