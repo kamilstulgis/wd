@@ -14,3 +14,16 @@ print(list(sztuki))
 
 # szt = [odwrocone['sztuki'] for key in odwrocone.keys()]
 # print(szt)
+
+
+#poprawione
+
+zakupy = {
+'jajka': 'szt',
+'maslo':'szt',
+'pomidory':'kg',
+'bulki':'szt',
+'banany':'kg'}
+lista =[key for key,value in zakupy.items() if value == 'szt']
+print(zakupy)
+print(lista)
