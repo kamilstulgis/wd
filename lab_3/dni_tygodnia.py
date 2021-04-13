@@ -18,8 +18,10 @@ def dictionary_date(year, month):
 
 def name_of_day(year, month, day):
     if day > 0 and day <= 31:
-        data = {day: calendar.day_name[day % 7-1] }
-        return data
+        data = {day: calendar.weekday(year, month, day)}
+        nr_day = data[day]
+        days = {day: calendar.day_name[nr_day]}
+        return days
     else:
         return 'Podaj prawdziwa datę'
 # print(name_of_day(1993,3,22))
