@@ -46,23 +46,27 @@ print('Chłopcy')
 print(df2_5[df2_5['Plec'] == 'M'].agg({'Liczba':['sum']}))
 print('Dziweczynki')
 print(df2_5[df2_5['Plec'] == 'K'].agg({'Liczba':['sum']}))
-print('##########')
+print('#####################')
+print(df2_5.groupby(['Plec']).agg({'Liczba':['sum']}))
+print('#####################')
 
 print("Zadanie 2.6")
 df2_6 = df.copy()
-
-dd=df2_6.groupby(['Rok', 'Plec'])['Liczba'].max()
+print('#####################')
+dd=df2_6.groupby(['Rok', 'Plec']).agg({'Liczba':['max']})
 print(dd)
-print('##########')
+print('#####################')
 
 print("Zadanie 2.7")
 df2_7 = df.copy()
 
 chlopiec = df2_7[df2_7['Plec'] == 'M'].Liczba.max()
 dziewczyna = df2_7[df2_7['Plec'] == 'K'].Liczba.max()
-
 print(df2_7[df2_7['Liczba'] == chlopiec])
 print(df2_7[df2_7['Liczba'] == dziewczyna])
+# print(df2_7.groupby(['Plec']).Liczba.max())
+# print('--------------------------------------')
+
 print('##########')
 
 """
@@ -89,13 +93,13 @@ print('Zadanie 3_3')
 print(df3.groupby(['Sprzedawca']).agg({'idZamowienia': ['count']}))
 
 print('Zadanie 3_4')
-print(df3.groupby(['Kraj']).agg({'idZamowienia': ['sum']}))
+print(df3.groupby(['Kraj']).agg({'Utarg': ['sum']}))
 
 print('Zadanie 3_5')
-# print(df3.groupby(['Data zamowienia']))
 
-data = pd.date_range('01-01-2005', '31-12-2005', freq='Y')
-df3['dataZamowienia'] = pd.to_datetime(df3['dataZamowienia'])
+print('----------------------------------')
+print(df3[( (df3['dataZamowienia'] >= '2005-01-01') & (df3['dataZamowienia'] <= '2005-12-31') & (df3['Kraj'] == 'Polska'))].agg({'Utarg':['sum']}))
+print('----------------------------------')
 
 print(df3['dataZamowienia'])
 print('Zadanie 3_6')
